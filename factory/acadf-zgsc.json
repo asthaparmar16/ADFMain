@@ -1,0 +1,9 @@
+{
+	"name": "acadf-zgsc",
+	"location": "westus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e78733a6-1a9c-43b4-85c9-9eabd7501f26",
+		"tenantId": "84f1e4ea-8554-43e1-8709-f0b8589ea118"
+	}
+}
