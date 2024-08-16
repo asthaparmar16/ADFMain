@@ -17,20 +17,6 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"dataset": {
-						"referenceName": "BinaryDatasetForDeleteActivity1",
-						"type": "DatasetReference",
-						"parameters": {
-							"FolderPath": {
-								"value": "@pipeline().parameters.SourceFolder",
-								"type": "Expression"
-							},
-							"Directory": {
-								"value": "@pipeline().parameters.SourceDirectory",
-								"type": "Expression"
-							}
-						}
-					},
 					"logStorageSettings": {
 						"linkedServiceName": {
 							"referenceName": "AzureBlobStorage1",
