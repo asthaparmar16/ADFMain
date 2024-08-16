@@ -1,5 +1,13 @@
 {
 	"name": "acadf-zgsc",
+	"properties": {
+		"globalParameters": {
+			"RootPath": {
+				"type": "string",
+				"value": "adfdemo/local/Projects/Astha"
+			}
+		}
+	},
 	"location": "westus",
 	"identity": {
 		"type": "SystemAssigned",
