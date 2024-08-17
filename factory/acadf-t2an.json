@@ -1,0 +1,9 @@
+{
+	"name": "acadf-t2an",
+	"location": "westus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e3990ee9-4a81-4bb1-ab7b-9b4c0249c87e",
+		"tenantId": "84f1e4ea-8554-43e1-8709-f0b8589ea118"
+	}
+}
