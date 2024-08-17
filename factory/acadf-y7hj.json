@@ -1,0 +1,9 @@
+{
+	"name": "acadf-y7hj",
+	"location": "southcentralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3d2be644-565e-49b8-8fc7-b4f86c52d918",
+		"tenantId": "84f1e4ea-8554-43e1-8709-f0b8589ea118"
+	}
+}
