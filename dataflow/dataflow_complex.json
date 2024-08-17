@@ -1,0 +1,71 @@
+{
+	"name": "dataflow_complex",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"linkedService": {
+						"referenceName": "AzureBlobStorage4",
+						"type": "LinkedServiceReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"linkedService": {
+						"referenceName": "AzureBlobStorage4",
+						"type": "LinkedServiceReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "stringify1"
+				},
+				{
+					"name": "derivedColumn1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          Address as (country as string, state as string, zipcode as integer),",
+				"          Contact as (Phone as string, email as string),",
+				"          id as integer,",
+				"          name as string,",
+				"          skills as string[]",
+				"     ),",
+				"     useSchema: false,",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'json',",
+				"     container: 'adfdemo',",
+				"     folderPath: 'input',",
+				"     fileName: 'employeesnew14.json',",
+				"     documentForm: 'singleDocument') ~> source1",
+				"source1 stringify(ContactStringify = Contact ? string,",
+				"     format: 'json') ~> stringify1",
+				"stringify1 derive(ContactStringify = toString(ContactStringify)) ~> derivedColumn1",
+				"derivedColumn1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'json',",
+				"     container: 'adfdemo',",
+				"     folderPath: 'OUTPUT',",
+				"     partitionFileNames:['EmployeeJsonCorrectStringify.json'],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          Address,",
+				"          id,",
+				"          name,",
+				"          skills,",
+				"          ContactStringify",
+				"     ),",
+				"     partitionBy('hash', 1)) ~> sink1"
+			]
+		}
+	}
+}
