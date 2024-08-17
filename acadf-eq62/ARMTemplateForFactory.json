@@ -268,6 +268,26 @@
 								"parameters": {}
 							}
 						]
+					},
+					{
+						"name": "Fail1",
+						"type": "Fail",
+						"dependsOn": [
+							{
+								"activity": "Copy data1",
+								"dependencyConditions": [
+									"Failed"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"message": {
+								"value": "@activity('Copy data1').error.message",
+								"type": "Expression"
+							},
+							"errorCode": "2200"
+						}
 					}
 				],
 				"policy": {
