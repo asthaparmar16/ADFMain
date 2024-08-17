@@ -53,7 +53,7 @@
 				"     documentForm: 'singleDocument') ~> parse1",
 				"parse1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     partitionFileNames:['outputofparse'],",
+				"     partitionFileNames:['outputofparse.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     mapColumn(",
