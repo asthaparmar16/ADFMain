@@ -1,0 +1,9 @@
+{
+	"name": "acadf-eq62",
+	"location": "westus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "4b4b3e0e-a63b-4e97-ae20-9e1721c1ed3e",
+		"tenantId": "84f1e4ea-8554-43e1-8709-f0b8589ea118"
+	}
+}
